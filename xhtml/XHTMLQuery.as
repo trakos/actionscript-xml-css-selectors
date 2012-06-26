@@ -21,6 +21,16 @@ package xhtml
 		
 		static public function cssQuery(query:String, from:XMLList):XMLList
 		{
+			// hack: I need a root element always above
+			var list:XMLList = list;
+			from = new XMLList();
+			for each ( var xml:XML in from )
+			{
+				var root:XML = new XML("<root />");
+				root.appendChild(xml);
+				from += root;
+			}
+			// endhack
 			var match:XMLList = new XMLList();
 			var base:XMLList = from.copy();
 			var selectors:Vector.<String> = Vector.<String>(_parseSelector(query).split(COMMA));

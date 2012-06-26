@@ -19,9 +19,7 @@ package xhtml
 		
 		public function XHTMLNode(xml:XML) 
 		{
-			var root:XML = new XML("<root />");
-			root.appendChild(xml);
-			_xmlNode = root;
+			_xmlNode = xml;
 		}
 		
 		public function get xml():XML
