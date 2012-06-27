@@ -11,8 +11,8 @@ package xhtml
 	{
 		static public var onlyUnique:Boolean = true;
 		static protected const WHITESPACE:RegExp = /\s*([\s>+~(),]|^|$)\s*/g;
-		static protected const IMPLIED_ALL:RegExp = /([\s>+~,]|[^(]\+|^)([#.:@])/g;
-		static protected const STANDARD_SELECT:RegExp = /^[^\s>+~]/;
+		static protected const IMPLIED_ALL:RegExp = /([\s>+~,]|[^(]\+|^)([#.:@\[])/g;
+		static protected const STANDARD_SELECT:RegExp = /^[^\s>+~\[]/;
 		static protected const NAMESPACE:RegExp = /\|/;
 		static protected const COMMA:RegExp = /\s*,\s*/;
 		//static protected const ATTRIBUTE_SELECTOR:RegExp = /([\w-]+(\|[\w-]+)?)\s*(\W?=)?\s*([^\]]*)/;
@@ -22,9 +22,9 @@ package xhtml
 		static public function cssQuery(query:String, from:XMLList):XMLList
 		{
 			// hack: I need a root element always above
-			var list:XMLList = list;
+			var list:XMLList = from;
 			from = new XMLList();
-			for each ( var xml:XML in from )
+			for each ( var xml:XML in list )
 			{
 				var root:XML = new XML("<root />");
 				root.appendChild(xml);
