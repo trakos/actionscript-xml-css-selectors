@@ -39,7 +39,7 @@ package xhtml.src
 		//LEVEL3
 		XHTMLPseudoClasses["contains"] = function(element:XML, code:String):Boolean
 		{
-			var regexp:RegExp = new RegExp("^" + escapeRegexChars(removeApostrophes(code)), "i");
+			var regexp:RegExp = new RegExp("^" + escapeRegexChars(removeApostrophes(code)) + "$", "i");
 			return regexp.test(element.toString());
 		}
 		XHTMLPseudoClasses["root"] = function(element:XML, code:String):Boolean
