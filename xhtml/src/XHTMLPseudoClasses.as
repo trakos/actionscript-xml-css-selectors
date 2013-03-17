@@ -75,7 +75,7 @@ package xhtml.src
 			// @todo: odd, even, equations - for now accepting only numbers
 			var k:int = parseInt(code);
 			var siblings:XMLList = XHTMLTraverse.siblings(new XMLList() + element);
-			return k < siblings.length && siblings[siblings.length() - 1 - k] == element;
+			return k < siblings.length() && siblings[siblings.length() - 1 - k] == element;
 		}
 		XHTMLPseudoClasses["target"] = function(element:XML, code:String):Boolean
 		{
