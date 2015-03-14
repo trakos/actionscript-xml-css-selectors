@@ -30,8 +30,4 @@ static public function createFromString(htmlString:String):XHTMLList; //convenie
 public function XHTMLList(nodes:XMLList);
 public function cssQuery(query:String):XHTMLList;//wraps static method of XHTMLQuery
 public function get xml():XMLList; // getter for underlying XMLList element
-```static public function createFromString(htmlString:String):XHTMLList; //convenient initialization
-public function XHTMLList(nodes:XMLList);
-public function cssQuery(query:String):XHTMLList;//wraps static method of XHTMLQuery
-public function get xml():XMLList; // getter for underlying XMLList element
-}}}```
+```
